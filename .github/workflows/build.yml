@@ -37,4 +37,4 @@ jobs:
     - name: Push
       # Push packages into private github repository 
       if: github.ref == 'refs/heads/main'
-      run: dotnet nuget push "../bin/Release/*.nupkg" -k ${{ env.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --skip-duplicate
+      run: dotnet nuget push "../bin/Release/*.nupkg" -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --skip-duplicate
